@@ -36,9 +36,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SEO from "../components/SEO.astro";
 import StructuredData from "../components/StructuredData.astro";
-import ForwardLink from "../components/ForwardLink.astro";
-import Testimonials from "../components/Testimonials.astro";
-import { getCollection } from "astro:content";
+// import { getCollection } from "astro:content";
 import { siteConfig } from "../config";
 
 /**
@@ -47,11 +45,11 @@ import { siteConfig } from "../config";
  * Retrieves all projects, filters for featured ones, sorts by custom order
  * (if specified), and limits to top 2 for the hero snapshots.
  */
-const allProjects = await getCollection("projects");
-const featuredProjects = allProjects
-  .filter((project) => project.data.featured === true)
-  .sort((a, b) => (a.data.order || 999) - (b.data.order || 999))
-  .slice(0, 2);
+// const allProjects = await getCollection("projects");
+// const featuredProjects = allProjects
+//   .filter((project) => project.data.featured === true)
+//   .sort((a, b) => (a.data.order || 999) - (b.data.order || 999))
+//   .slice(0, 2);
 
 /**
  * Case snapshots for hero display
@@ -59,7 +57,6 @@ const featuredProjects = allProjects
  * Takes up to 3 featured projects to showcase in the hero section,
  * providing immediate evidence of impact and outcomes.
  */
-const caseSnapshots = featuredProjects.slice(0, 3);
 
 /**
  * Queries recent decisions for preview section
@@ -67,12 +64,11 @@ const caseSnapshots = featuredProjects.slice(0, 3);
  * Retrieves all decisions, sorts by date (newest first), and limits to
  * top 2 for the homepage preview.
  */
-const allDecisions = await getCollection("decisions");
-const recentDecisions = allDecisions
-  .sort(
-    (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
-  )
-  .slice(0, 2);
+// const allDecisions = await getCollection("decisions");
+//   .sort(
+//     (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+//   )
+//   .slice(0, 2);
 ---
 
 <BaseLayout>
