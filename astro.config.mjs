@@ -33,7 +33,7 @@ import sitemap from "@astrojs/sitemap";
 const { SITE_URL } = loadEnv(
   process.env.NODE_ENV || "production",
   process.cwd(),
-  ""
+  "",
 );
 
 /**
@@ -72,7 +72,7 @@ export default defineConfig({
    *
    * Set SITE_URL in your .env file (e.g., https://example.com)
    */
-  site: SITE_URL || "https://example.com",
+  site: SITE_URL || "https://super-shayan.github.io",
 
   /**
    * Environment variables schema (Astro v5+)
