@@ -8,34 +8,34 @@ Copy `.env.example` to `.env` and configure:
 
 ### Site Settings
 
-| Variable | Required | Default | Description |
-|----------|----------|---------|-------------|
-| `SITE_URL` | Yes | `https://example.com` | Production URL (for sitemap, OG tags) |
-| `SITE_LANGUAGE` | No | `en` | ISO 639-1 code (e.g., `en`, `id`, `de`) |
-| `SITE_TITLE` | No | `Professional Portfolio` | Site title for SEO |
-| `SITE_DESCRIPTION` | No | - | Default meta description |
+| Variable           | Required | Default                  | Description                             |
+| ------------------ | -------- | ------------------------ | --------------------------------------- |
+| `SITE_URL`         | Yes      | `https://example.com`    | Production URL (for sitemap, OG tags)   |
+| `SITE_LANGUAGE`    | No       | `en`                     | ISO 639-1 code (e.g., `en`, `id`, `de`) |
+| `SITE_TITLE`       | No       | `Professional Portfolio` | Site title for SEO                      |
+| `SITE_DESCRIPTION` | No       | -                        | Default meta description                |
 
 ### Author Information
 
-| Variable | Required | Default | Description |
-|----------|----------|---------|-------------|
-| `SITE_AUTHOR_NAME` | Yes | `Your Name` | Your full name |
-| `SITE_AUTHOR_TITLE` | Yes | `Senior Software Engineer` | Your job title |
-| `SITE_AUTHOR_BIO` | No | - | Short professional bio |
-| `SITE_AUTHOR_EMAIL` | Yes | `hello@example.com` | Contact email |
-| `SITE_AUTHOR_LOCATION` | No | - | Your location (leave empty to hide) |
+| Variable               | Required | Default                    | Description                         |
+| ---------------------- | -------- | -------------------------- | ----------------------------------- |
+| `SITE_AUTHOR_NAME`     | Yes      | `Your Name`                | Your full name                      |
+| `SITE_AUTHOR_TITLE`    | Yes      | `Senior Software Engineer` | Your job title                      |
+| `SITE_AUTHOR_BIO`      | No       | -                          | Short professional bio              |
+| `SITE_AUTHOR_EMAIL`    | Yes      | `hello@example.com`        | Contact email                       |
+| `SITE_AUTHOR_LOCATION` | No       | -                          | Your location (leave empty to hide) |
 
 ### Social Links
 
 Leave empty to hide a platform from your site.
 
-| Variable | Description |
-|----------|-------------|
-| `SOCIAL_GITHUB` | GitHub profile URL |
-| `SOCIAL_LINKEDIN` | LinkedIn profile URL |
-| `SOCIAL_TWITTER` | Twitter/X profile URL |
-| `SOCIAL_MASTODON` | Mastodon profile URL |
-| `SOCIAL_BLUESKY` | Bluesky profile URL |
+| Variable          | Description           |
+| ----------------- | --------------------- |
+| `SOCIAL_GITHUB`   | GitHub profile URL    |
+| `SOCIAL_LINKEDIN` | LinkedIn profile URL  |
+| `SOCIAL_TWITTER`  | Twitter/X profile URL |
+| `SOCIAL_MASTODON` | Mastodon profile URL  |
+| `SOCIAL_BLUESKY`  | Bluesky profile URL   |
 
 ### Example Configuration
 
@@ -61,13 +61,9 @@ Navigation links are configured in `src/config.ts`:
 
 ```typescript
 nav: [
-  { label: 'Projects', href: '/projects' },
-  { label: 'Decisions', href: '/decisions' },
-  { label: 'Journey', href: '/journey' },
-  { label: 'Writing', href: '/writing' },
-  { label: 'Speaking', href: '/speaking' },
-  { label: 'Uses', href: '/uses' },
-  { label: 'Contact', href: '/contact' },
+  { label: 'Publications', href: '/publications' },
+  { label: 'Experience', href: '/experience' },
+  { label: 'Contact', href: '/Contact' },
 ],
 ```
 
@@ -81,18 +77,19 @@ SEO metadata for static pages is centralized in `src/pages.config.ts`. Edit this
 // src/pages.config.ts
 export const pagesConfig = {
   projects: {
-    title: 'Projects - Case Studies',
-    description: 'Detailed case studies showcasing...',
-    heading: 'Projects',
-    intro: 'Case studies that demonstrate...',
+    title: "Projects - Case Studies",
+    description: "Detailed case studies showcasing...",
+    heading: "Projects",
+    intro: "Case studies that demonstrate...",
   },
   // ... other pages
-}
+};
 ```
 
 **Available pages:** `home`, `projects`, `decisions`, `journey`, `writing`, `speaking`, `uses`, `contact`
 
 **Fields:**
+
 - `title` — Browser tab and SEO title
 - `description` — Meta description for SEO
 - `heading` — Page h1 heading (optional, defaults to title)
@@ -102,15 +99,15 @@ export const pagesConfig = {
 
 Replace these files in `public/` with your own:
 
-| File | Size | Purpose |
-|------|------|---------|
-| `favicon.svg` | - | Main favicon (modern browsers) |
-| `favicon-32x32.png` | 32×32 | PNG fallback |
-| `favicon-16x16.png` | 16×16 | PNG fallback |
-| `favicon-192x192.png` | 192×192 | Android Chrome |
-| `favicon-512x512.png` | 512×512 | PWA icon |
-| `apple-touch-icon.png` | 180×180 | iOS icon |
-| `og-image.png` | 1200×630 | Social sharing image |
+| File                   | Size     | Purpose                        |
+| ---------------------- | -------- | ------------------------------ |
+| `favicon.svg`          | -        | Main favicon (modern browsers) |
+| `favicon-32x32.png`    | 32×32    | PNG fallback                   |
+| `favicon-16x16.png`    | 16×16    | PNG fallback                   |
+| `favicon-192x192.png`  | 192×192  | Android Chrome                 |
+| `favicon-512x512.png`  | 512×512  | PWA icon                       |
+| `apple-touch-icon.png` | 180×180  | iOS icon                       |
+| `og-image.png`         | 1200×630 | Social sharing image           |
 
 After replacing, update `public/site.webmanifest`:
 

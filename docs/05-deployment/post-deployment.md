@@ -35,13 +35,14 @@ Checklist and verification steps after deploying to production.
 View page source (Ctrl+U / Cmd+U):
 
 ```html
-<title>Your Name - Professional Portfolio</title>
-<meta name="description" content="...">
-<meta property="og:title" content="...">
-<meta property="og:image" content="https://yoursite.com/og-image.png">
+<title>Shayan Jawed</title>
+<meta name="description" content="..." />
+<meta property="og:title" content="..." />
+<meta property="og:image" content="https://yoursite.com/og-image.png" />
 ```
 
 **Tools:**
+
 - [Meta Tags Checker](https://metatags.io/)
 - [Facebook Debugger](https://developers.facebook.com/tools/debug/)
 - [Twitter Card Validator](https://cards-dev.twitter.com/validator)
@@ -51,6 +52,7 @@ View page source (Ctrl+U / Cmd+U):
 Share URL on LinkedIn, Twitter, Slack. Check preview image and description.
 
 If incorrect:
+
 1. Verify `SITE_URL` is set correctly
 2. Check `/og-image.png` is accessible
 3. Use debugger tools to refresh cache
@@ -60,24 +62,28 @@ If incorrect:
 Visit `https://yoursite.com/sitemap-index.xml`
 
 **Submit to search engines:**
+
 - [Google Search Console](https://search.google.com/search-console)
 - [Bing Webmaster Tools](https://www.bing.com/webmasters)
 
 ### 4. Check Structured Data
 
 Use [Google Rich Results Test](https://search.google.com/test/rich-results):
+
 - Test homepage for Person, WebSite schema
 - Test project page for Article/Project schema
 
 ### 5. Performance Testing
 
 **Lighthouse (Chrome DevTools):**
+
 1. Open DevTools (F12)
 2. Lighthouse tab
 3. Run audit
 4. Target: 90+ for all categories
 
 **Other tools:**
+
 - [PageSpeed Insights](https://pagespeed.web.dev/)
 - [WebPageTest](https://www.webpagetest.org/)
 
@@ -116,6 +122,7 @@ Use [Google Rich Results Test](https://search.google.com/test/rich-results):
 ### 404 on Page Refresh
 
 **Netlify:** Add `public/_redirects`:
+
 ```
 /* /index.html 200
 ```
